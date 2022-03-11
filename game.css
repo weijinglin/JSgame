@@ -1,0 +1,11 @@
+#all{
+    border: 1px solid rgb(15, 3, 3);
+    height: 500px;
+    width: 500px;
+}
+
+.bu{
+    position: relative;
+    left: 600px;
+    top: 600px;
+}
