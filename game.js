@@ -29,28 +29,14 @@ document.querySelector('button').onclick=function(){
     game(10,10);
 }
 
-function game(size,count,x,y){
-    let Map = InitMap(size,count,0);
+function game(map,b,man,size,count,x,y){
     let score = 0;
     let myDiv = document.getElementById('all');
     let legth = size*50;
     let attri = length +'px';
     myDiv.style.height = attri;
     myDiv.style.width = attri;
-    var b = [];
-    for(let j = 0; j < size; ++j){
-        b[j] = document.createElement('img');
-        b[j].src = "./img/prize.svg";
-        b[j].style.height = '50px';
-        b[j].style.width = '50px';
-        b.className = 'prize';
-    }
     var count = 0;
-    var man = document.createElement('img');
-    man.src = "./img/robot.svg";
-    man.style.height = '50px';
-    man.style.width = '50px';
-    man.id = 'man';
     // man.style.position = 'absolute';
     // var xc = x*50;
     // var yc = y*50;
@@ -72,8 +58,10 @@ function game(size,count,x,y){
             child.style.position = 'absolute';
             child.style.left = lef;
             child.style.top = hig;
-            child.className = 'child';
-            if(Map[index][i] == 1){
+            var cal = 'child' + i;
+            cal = cal + index;
+            child.id = cal;
+            if(map[index][i] == 1){
                 b[count].style.top = hig;
                 b[count].style.left = lef;
                 //document.body.append(child);
@@ -88,4 +76,25 @@ function game(size,count,x,y){
         }
     }
 
+}
+
+ function delet(map){
+    // for (let i = 0; i < 10; i++) {
+    //     for (let j = 0; j < 10; j++) {
+    //         if(map[i][j] == 1){
+    //             var fid = 'child' + i;
+    //             fid = fid + j;
+    //             var b = document.getElementById(fid);
+    //             b.removeChild(); 
+    //         }
+    //     }
+        
+    // }
+    // var b = document.getElementById('prize');
+    // b.remove;
+    for (let index = 0; index < 10; index++) {
+        var c = b[0];
+        c.remove();
+        
+    }
 }
