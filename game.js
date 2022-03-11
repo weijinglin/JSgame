@@ -44,6 +44,7 @@ function game(map,b,man,size,count,x,y){
     // var yy = yc +'px';
     // man.style.top = xx;
     // man.style.left = yy;
+    var zu = [];
     for (let index = 0; index < size; index++) {
         for(let i = 0;i < size;++i){
             const child = document.createElement('div');
@@ -66,6 +67,7 @@ function game(map,b,man,size,count,x,y){
                 b[count].style.left = lef;
                 //document.body.append(child);
                 child.appendChild(b[count]);
+                zu[count] = {x:i,y:index};
                 count++;
             }
             child.style.border = '1px solid rgb(15, 3, 3)';
@@ -75,7 +77,7 @@ function game(map,b,man,size,count,x,y){
             }
         }
     }
-
+    return zu;
 }
 
  function delet(map){
@@ -97,4 +99,5 @@ function game(map,b,man,size,count,x,y){
         c.remove();
         
     }
+
 }

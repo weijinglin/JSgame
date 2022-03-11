@@ -14,24 +14,30 @@
                 var y = 0;
                 let map = InitMap(10,10,0);
                 var b = [];
+                var indexy;
                 for(let j = 0; j < 10; ++j){
-        b[j] = document.createElement('img');
-        b[j].src = "./img/prize.svg";
-        b[j].style.height = '50px';
-        b[j].style.width = '50px';
-        var idd = 'prize' + j;
-        console.log(idd);
-        b.id = idd;
-    }
-    var man = document.createElement('img');
-    man.src = "./img/robot.svg";
-    man.style.height = '50px';
-    man.style.width = '50px';
-    man.id = 'man';
+                b[j] = document.createElement('img');
+                b[j].src = "./img/prize.svg";
+                b[j].style.height = '50px';
+                b[j].style.width = '50px';
+                var idd = 'prize' + j;
+                console.log(idd);
+                b[j].id = idd;
+                }
+                var man = document.createElement('img');
+                man.src = "./img/robot.svg";
+                man.style.height = '50px';
+                man.style.width = '50px';
+                man.id = 'man';
                 my$("tu").onclick = function () {
                     //创建元素的
-                    game(map,b,man,10,10,x,y);
+                    indexy = game(map,b,man,10,10,x,y);
                     //把创建后的子元素追加到父级元素
+                    for (let i = 0; i < 10; i++) {
+                        console.log(indexy[i].x);
+                        console.log(indexy[i].y);
+                        
+                    }
                 };
                 document.onkeydown = function(e){
                     switch(e.keyCode){
@@ -42,6 +48,16 @@
                         x = x - 1;
                         var c = document.getElementById('man');
                     c.remove();
+                    for (let i = 0; i < 10; i++) {
+                        if(indexy[i].x == x && indexy[i].y == y){
+                            var idd = 'prize' + i;
+                            var d = document.getElementById(idd);
+                            d.remove();
+                            map[x][y] = 0;
+                            break;
+                        }
+                        
+                    }
                     var man = document.createElement('img');
                     man.src = "./img/robot.svg";
                     man.style.height = '50px';
@@ -58,6 +74,16 @@
                     y = y - 1;
                     var c = document.getElementById('man');
                     c.remove();
+                    for (let i = 0; i < 10; i++) {
+                        if(indexy[i].x == x && indexy[i].y == y){
+                            var idd = 'prize' + i;
+                            var d = document.getElementById(idd);
+                            d.remove();
+                            map[x][y] = 0;
+                            break;
+                        }
+                        
+                    }
                     var man = document.createElement('img');
                     man.src = "./img/robot.svg";
                     man.style.height = '50px';
@@ -74,6 +100,17 @@
                     x = x + 1;
                     var c = document.getElementById('man');
                     c.remove();
+                    for (let i = 0; i < 10; i++) {
+                        if(indexy[i].x == x && indexy[i].y == y){
+                            var idd = 'prize' + i;
+                            var d = document.getElementById(idd);
+                            d.remove();
+                            map[x][y] = 0;
+                            break;
+                        }
+                        
+                    }
+                    
                     var man = document.createElement('img');
                     man.src = "./img/robot.svg";
                     man.style.height = '50px';
@@ -90,6 +127,16 @@
                     y = y + 1;
                     var c = document.getElementById('man');
                     c.remove();
+                    for (let i = 0; i < 10; i++) {
+                        if(indexy[i].x == x && indexy[i].y == y){
+                            var idd = 'prize' + i;
+                            var d = document.getElementById(idd);
+                            d.remove();
+                            map[x][y] = 0;
+                            break;
+                        }
+                        
+                    }
                     var man = document.createElement('img');
                     man.src = "./img/robot.svg";
                     man.style.height = '50px';
