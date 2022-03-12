@@ -14,7 +14,8 @@
                 var y = 0;
                 let map = InitMap(10,10,0);
                 var b = [];
-                var indexy;
+                var indexy = [10];
+                var exist = [false,false,false,false,false,false,false,false,false,false];
                 for(let j = 0; j < 10; ++j){
                 b[j] = document.createElement('img');
                 b[j].src = "./img/prize.svg";
@@ -49,11 +50,12 @@
                         var c = document.getElementById('man');
                     c.remove();
                     for (let i = 0; i < 10; i++) {
-                        if(indexy[i].x == x && indexy[i].y == y){
+                        if(indexy[i].x == x && indexy[i].y == y && exist[i] == false){
                             var idd = 'prize' + i;
                             var d = document.getElementById(idd);
+                            exist[i] = true;
                             d.remove();
-                            map[x][y] = 0;
+                            map[y][x] = 0;
                             break;
                         }
                         
@@ -75,11 +77,12 @@
                     var c = document.getElementById('man');
                     c.remove();
                     for (let i = 0; i < 10; i++) {
-                        if(indexy[i].x == x && indexy[i].y == y){
+                        if(indexy[i].x == x && indexy[i].y == y && exist[i] == false){
                             var idd = 'prize' + i;
                             var d = document.getElementById(idd);
+                            exist[i] = true;
                             d.remove();
-                            map[x][y] = 0;
+                            map[y][x] = 0;
                             break;
                         }
                         
@@ -101,11 +104,12 @@
                     var c = document.getElementById('man');
                     c.remove();
                     for (let i = 0; i < 10; i++) {
-                        if(indexy[i].x == x && indexy[i].y == y){
+                        if(indexy[i].x == x && indexy[i].y == y && exist[i] == false){
                             var idd = 'prize' + i;
                             var d = document.getElementById(idd);
+                            exist[i] = true;
                             d.remove();
-                            map[x][y] = 0;
+                            map[y][x] = 0;
                             break;
                         }
                         
@@ -128,11 +132,12 @@
                     var c = document.getElementById('man');
                     c.remove();
                     for (let i = 0; i < 10; i++) {
-                        if(indexy[i].x == x && indexy[i].y == y){
+                        if(indexy[i].x == x && indexy[i].y == y && exist[i] == false){
                             var idd = 'prize' + i;
                             var d = document.getElementById(idd);
+                            exist[i] = true;
                             d.remove();
-                            map[x][y] = 0;
+                            map[y][x] = 0;
                             break;
                         }
                         
