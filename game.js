@@ -37,13 +37,6 @@ function game(map,b,man,size,count,x,y){
     myDiv.style.height = '0px';
     myDiv.style.width = '0px';
     var count = 0;
-    // man.style.position = 'absolute';
-    // var xc = x*50;
-    // var yc = y*50;
-    // var xx = xc + 'px';
-    // var yy = yc +'px';
-    // man.style.top = xx;
-    // man.style.left = yy;
     var zu = [];
     for (let index = 0; index < size; index++) {
         for(let i = 0;i < size;++i){
@@ -128,24 +121,3 @@ function update(map,b,man,exist,size,count,x,y,score){
     gameScore.textContent = onscore;
 }
 
- function delet(map){
-    // for (let i = 0; i < 10; i++) {
-    //     for (let j = 0; j < 10; j++) {
-    //         if(map[i][j] == 1){
-    //             var fid = 'child' + i;
-    //             fid = fid + j;
-    //             var b = document.getElementById(fid);
-    //             b.removeChild(); 
-    //         }
-    //     }
-        
-    // }
-    // var b = document.getElementById('prize');
-    // b.remove;
-    for (let index = 0; index < 10; index++) {
-        var c = b[0];
-        c.remove();
-        
-    }
-
-}
