@@ -10,6 +10,9 @@
         <div id = 'score'>
             <h2>score:0</h2>
         </div>
+        <div id = 'time'>
+            <h1>time:100</h1>    
+        </div>
         <button id = "tu" class="bu">start game</button>
         <script src="./game.js"></script>
             <script>  
@@ -18,7 +21,9 @@
                 let map = InitMap(10,10,0);
                 var b = [];
                 var indexy = [10];
+                var timer = 100;
                 var score = 0;
+                var finish = false;
                 var exist = [false,false,false,false,false,false,false,false,false,false];
                 for(let j = 0; j < 10; ++j){
                 b[j] = document.createElement('img');
@@ -35,6 +40,14 @@
                 man.style.width = '50px';
                 man.id = 'man';
                 my$("tu").onclick = function () {
+                    setInterval(()=>{
+                    var Timer = document.querySelector('h1');
+                    if(timer > 0 && finish == false){
+                        timer--;
+                    }
+                    var apptime = 'time:' + timer;
+                    Timer.textContent = apptime;
+                },1000)
                     //创建元素的
                     indexy = game(map,b,man,10,10,x,y);
                     //把创建后的子元素追加到父级元素
@@ -161,6 +174,16 @@
                 }
             }
                 }
+            setInterval(()=>{
+                if(score == 100 && finish == false){
+                    alert("good,you finish the job");
+                    finish = true;
+                }
+            },10)
+                
+                
+                
+                
                 </script>
     </body>
 </html>

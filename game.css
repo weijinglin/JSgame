@@ -7,8 +7,16 @@
 #score{
     position: absolute;
     left: 700px;
-    height: 500px;
+    top: 500px;
+    height: 100px;
 
+}
+
+#time{
+    position: absolute;
+    left: 700px;
+    top: 200px;
+    height: 100px;
 }
 
 .bu{
