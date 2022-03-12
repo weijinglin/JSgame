@@ -4,8 +4,15 @@
     width: 500px;
 }
 
+#score{
+    position: absolute;
+    left: 700px;
+    height: 500px;
+
+}
+
 .bu{
-    position: relative;
+    position: absolute;
     left: 600px;
     top: 600px;
 }
