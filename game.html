@@ -23,7 +23,6 @@
                 let map = InitMap(size,count,0);
                 var b = [];
                 var indexy = [count];
-                var timer = 100;
                 var score = 0;
                 var finish = false;
                 var exist = [false,false,false,false,false,false,false,false,false,false];
@@ -42,6 +41,7 @@
                 man.style.width = '50px';
                 man.id = 'man';
                 my$("tu").onclick = function () {
+                    var timer = 100;
                     setInterval(()=>{
                     var Timer = document.querySelector('h1');
                     if(timer > 0 && finish == false){
