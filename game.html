@@ -18,14 +18,16 @@
             <script>  
                 var x = 0;
                 var y = 0;
-                let map = InitMap(10,10,0);
+                var size = 10;
+                var count = 10;
+                let map = InitMap(size,count,0);
                 var b = [];
-                var indexy = [10];
+                var indexy = [count];
                 var timer = 100;
                 var score = 0;
                 var finish = false;
                 var exist = [false,false,false,false,false,false,false,false,false,false];
-                for(let j = 0; j < 10; ++j){
+                for(let j = 0; j < count; ++j){
                 b[j] = document.createElement('img');
                 b[j].src = "./img/prize.svg";
                 b[j].style.height = '50px';
@@ -49,9 +51,9 @@
                     Timer.textContent = apptime;
                 },1000)
                     //创建元素的
-                    indexy = game(map,b,man,10,10,x,y);
+                    indexy = game(map,b,man,size,count,x,y);
                     //把创建后的子元素追加到父级元素
-                    for (let i = 0; i < 10; i++) {
+                    for (let i = 0; i < count; i++) {
                         console.log(indexy[i].x);
                         console.log(indexy[i].y);
                         
@@ -66,14 +68,14 @@
                         x = x - 1;
                         var c = document.getElementById('man');
                     c.remove();
-                    for (let i = 0; i < 10; i++) {
+                    for (let i = 0; i < count; i++) {
                         if(indexy[i].x == x && indexy[i].y == y && exist[i] == false){
                             var idd = 'prize' + i;
                             var d = document.getElementById(idd);
                             exist[i] = true;
                             d.remove();
                             map[y][x] = 0;
-                            score += 10;
+                            score += 100/count;
                             break;
                         }
                         
@@ -83,7 +85,7 @@
                     man.style.height = '50px';
                     man.style.width = '50px';
                     man.id = 'man';
-                    update(map,b,man,exist,10,10,x,y,score);
+                    update(map,b,man,exist,size,count,x,y,score);
                     }
                     break;
                 }
@@ -94,14 +96,14 @@
                     y = y - 1;
                     var c = document.getElementById('man');
                     c.remove();
-                    for (let i = 0; i < 10; i++) {
+                    for (let i = 0; i < count; i++) {
                         if(indexy[i].x == x && indexy[i].y == y && exist[i] == false){
                             var idd = 'prize' + i;
                             var d = document.getElementById(idd);
                             exist[i] = true;
                             d.remove();
                             map[y][x] = 0;
-                            score += 10;
+                            score += 100/count;
                             break;
                         }
                         
@@ -111,25 +113,25 @@
                     man.style.height = '50px';
                     man.style.width = '50px';
                     man.id = 'man';
-                    update(map,b,man,exist,10,10,x,y,score);
+                    update(map,b,man,exist,size,count,x,y,score);
                 }
                 break;
                 }
                 case 39:{
-                if(x == 9){
+                if(x == size-1){
 
                 }else{
                     x = x + 1;
                     var c = document.getElementById('man');
                     c.remove();
-                    for (let i = 0; i < 10; i++) {
+                    for (let i = 0; i < count; i++) {
                         if(indexy[i].x == x && indexy[i].y == y && exist[i] == false){
                             var idd = 'prize' + i;
                             var d = document.getElementById(idd);
                             exist[i] = true;
                             d.remove();
                             map[y][x] = 0;
-                            score += 10;
+                            score += 100/count;
                             break;
                         }
                         
@@ -140,25 +142,25 @@
                     man.style.height = '50px';
                     man.style.width = '50px';
                     man.id = 'man';
-                    update(map,b,man,exist,10,10,x,y,score);
+                    update(map,b,man,exist,size,count,x,y,score);
                 }
                 break;
                 }
                 case 40:{
-                if(y == 9){
+                if(y == size-1){
 
                 }else{
                     y = y + 1;
                     var c = document.getElementById('man');
                     c.remove();
-                    for (let i = 0; i < 10; i++) {
+                    for (let i = 0; i < count; i++) {
                         if(indexy[i].x == x && indexy[i].y == y && exist[i] == false){
                             var idd = 'prize' + i;
                             var d = document.getElementById(idd);
                             exist[i] = true;
                             d.remove();
                             map[y][x] = 0;
-                            score += 10;
+                            score += 100/count;
                             break;
                         }
                         
@@ -168,12 +170,12 @@
                     man.style.height = '50px';
                     man.style.width = '50px';
                     man.id = 'man';
-                    update(map,b,man,exist,10,10,x,y,score);
+                    update(map,b,man,exist,size,count,x,y,score);
                 }
                 break;
                 }
-            }
                 }
+            }
             setInterval(()=>{
                 if(score == 100 && finish == false){
                     alert("good,you finish the job");
